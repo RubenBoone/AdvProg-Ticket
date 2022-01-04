@@ -17,6 +17,8 @@ jobs:
 
       - name: Start Postgresfor integration test
         uses: harmon758/postgresql-action@v1
+        ports:
+          - 5432:5432
         with:
           postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
 
