@@ -20,6 +20,9 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: fred
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
         with:
           postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
 
