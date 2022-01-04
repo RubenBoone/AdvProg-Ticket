@@ -1,11 +1,6 @@
 name: Monument Java CI
 
 on: push
-
-env:
-  DB_HOST: localhost
-  DB_USERNAME: postgres
-  DB_PASSWORD: fred
   
 jobs:
   build:
@@ -26,6 +21,8 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: fred
           POSTGRES_DB: postgres
+          POSRTGRES_HOST: postgres
+          POSTGRES_PORT: 5432
         with:
           postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
 
