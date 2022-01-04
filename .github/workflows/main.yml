@@ -5,7 +5,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Java 11 Monument container
+    name: Java 11 Ticket container
     steps:
       - name: Check out repository
         uses: actions/checkout@v1
@@ -14,11 +14,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-
-      - name: Start Postgresfor integration test
+      - name: Start Postgres for integration test
         uses: harmon758/postgresql-action@v1
         with:
-          postgresql version: '14'  # See https://hub.docker.com/_/postgres for available versions
+          postgresql version: '11'  # See https://hub.docker.com/_/postgres for available versions
 
       - name: Build and analyze
         env:
