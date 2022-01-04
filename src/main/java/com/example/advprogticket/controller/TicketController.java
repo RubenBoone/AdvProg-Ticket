@@ -3,9 +3,8 @@ package com.example.advprogticket.controller;
 import com.example.advprogticket.model.Ticket;
 import com.example.advprogticket.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.Date;
@@ -42,5 +41,11 @@ public class TicketController {
     @GetMapping("/tickets/{email}")
     public List<Ticket> getAllTicketsByEmail(@PathVariable String email){
         return ticketRepository.findTicketByEmail(email);
+    }
+
+    @PostMapping("/tickets")
+    public Ticket addTicket(@RequestBody Ticket ticket){
+        ticketRepository.save(ticket);
+        return ticket;
     }
 }
