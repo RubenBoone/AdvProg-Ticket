@@ -3,7 +3,6 @@ package com.example.advprogticket.controller;
 import com.example.advprogticket.model.Ticket;
 import com.example.advprogticket.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
