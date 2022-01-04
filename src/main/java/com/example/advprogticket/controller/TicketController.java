@@ -4,6 +4,7 @@ import com.example.advprogticket.model.Ticket;
 import com.example.advprogticket.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
@@ -26,7 +27,7 @@ public class TicketController {
             ticketRepository.save(new Ticket(5, "BET001", "Ruben", "Boone", "r0785519@student.thomasmore.be", new Date()));
             ticketRepository.save(new Ticket(6, "BET001", "Ruben", "Boone", "r0785519@student.thomasmore.be", new Date()));
             ticketRepository.save(new Ticket(7, "BET002", "Ruben", "Boone", "r0785519@student.thomasmore.be", new Date()));
-            ticketRepository.save(new Ticket(8, "BET002", "Ruben", "Boone", "r0785519@student.thomasmore.be", new Date()));
+            ticketRepository.save(new Ticket(8, "BET002", "Ruben", "Boone", "r0785519@student.thomasmore.com", new Date()));
         }
 
         System.out.println("Info test: " + ticketRepository);
@@ -38,4 +39,8 @@ public class TicketController {
         return ticketRepository.findAll();
     }
 
+    @GetMapping("/tickets/{email}")
+    public List<Ticket> getAllTicketsByEmail(@PathVariable String email){
+        return ticketRepository.findTicketByEmail(email);
+    }
 }
