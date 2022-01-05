@@ -27,9 +27,6 @@ public class TicketController {
             ticketRepository.save(new Ticket(7, "BET002", "Ruben", "Boone", "r0785519@student.thomasmore.be", new Date()));
             ticketRepository.save(new Ticket(8, "BET002", "Ruben", "Boone", "r0785519@student.thomasmore.com", new Date()));
         }
-
-        System.out.println("Info test: " + ticketRepository);
-
     }
 
     @GetMapping("/tickets")
