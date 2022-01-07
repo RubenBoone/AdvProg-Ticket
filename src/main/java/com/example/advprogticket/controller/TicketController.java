@@ -41,6 +41,7 @@ public class TicketController {
 
     @PostMapping("/tickets")
     public Ticket addTicket(@RequestBody Ticket ticket){
+        ticket.setDate(new Date());
         ticketRepository.save(ticket);
         return ticket;
     }
